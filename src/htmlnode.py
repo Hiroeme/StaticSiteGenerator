@@ -25,7 +25,26 @@ class HtmlNode():
         Returns:
             str: The HTML string representation of the properties.
         """
+        if not self.props:
+            return ""
         return " " + " ".join([f'{key}="{value}"' for key, value in self.props.items()])
     
     def __repr__(self):
         print(self.tag, self.value, self.children, self.props)
+
+class LeafNode(HtmlNode):
+
+    def __init__(self, tag = None, value = None, props = None):
+        if not value:
+            raise ValueError("All leaf nodes must have a value")
+
+        super().__init__(tag, value, None, props)
+        
+
+    def to_html(self):
+        if not self.value:
+            raise ValueError("All leaf nodes must have a value")
+        if not self.tag:
+            return f"{self.value}"
+        return f"<{self.tag}{self.props_to_html()}>{self.value}</{self.tag}>"
+    
