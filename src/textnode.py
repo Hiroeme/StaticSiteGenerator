@@ -2,7 +2,7 @@ from enum import Enum
 
 class TextType(Enum):
     """Enum for inline elements."""
-    NORMAL = "normal"
+    TEXT = "text"
     BOLD = "bold"
     ITALIC = "italic"
     CODE = "code"
@@ -10,7 +10,7 @@ class TextType(Enum):
     IMAGE = "image"
 
 class TextNode():
-    def __init__(self, text : str, text_type : TextType = TextType.NORMAL, link : str = None):
+    def __init__(self, text : str, text_type : TextType = TextType.TEXT, link : str = None):
         """
         Initialize a TextNode with text, type, and optional link or image.
         Args:

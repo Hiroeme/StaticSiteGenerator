@@ -1,3 +1,4 @@
+from textnode import TextNode, TextType
 
 class HtmlNode():
     """A class representing a node in an HTML document tree."""
@@ -32,7 +33,6 @@ class HtmlNode():
     def __repr__(self):
         return f"HTMLNode({self.tag}, {self.value}, children: {self.children}, {self.props})"
 
-
 class LeafNode(HtmlNode):
 
     def __init__(self, tag = None, value = None, props = None):
@@ -53,6 +53,7 @@ class LeafNode(HtmlNode):
         return f"LeafNode({self.tag}, {self.value}, {self.props})"
     
 class ParentNode(HtmlNode):
+    
     def __init__(self, tag, children, props=None):
         if not tag:
             raise ValueError("All Parent nodes must have a tag")
@@ -71,3 +72,22 @@ class ParentNode(HtmlNode):
     
     def __repr__(self):
         return f"ParentNode({self.tag}, children: {self.children}, {self.props})"
+    
+def text_node_to_html_node(text_node : TextNode):
+    
+    match text_node.text_type:
+
+        case TextType.TEXT:
+            return LeafNode(None, text_node.text)
+        case TextType.BOLD:
+            return LeafNode("b", text_node.text)
+        case TextType.ITALIC:
+            return LeafNode("i", text_node.text)
+        case TextType.CODE:
+            return LeafNode("code", text_node.text)
+        case TextType.LINK:
+            return LeafNode("a", text_node.text, {"href" : text_node.link})
+        case TextType.IMAGE:
+            return LeafNode("img", "", {"src": text_node.link, "alt": text_node.text})
+        case _:
+            raise ValueError("Incorrect arguements for TextNode")
