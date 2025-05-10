@@ -101,6 +101,20 @@ def ulist_text_to_children(text):
         
     return list_items
 
+def bquote_text_to_children(text):
+    split_text = text.split("\n")
+
+    for i in range(len(split_text)):
+        split_text[i] = split_text[i].replace(">", "", 1).strip()
+    
+    text = " ".join(split_text)
+
+    list_items = []
+    textnodes = text_to_textnodes(text)
+    for textnode in textnodes:
+        list_items.append(text_node_to_html_node(textnode))
+    return list_items
+
 def markdown_to_html_node(md):
     blocks = markdown_to_blocks(md)
     
@@ -139,7 +153,7 @@ def markdown_to_html_node(md):
                 parent = ParentNode("pre", [text_node_to_html_node(TextNode(block, TextType.CODE))])
                 children.append(parent)
             case BlockType.QUOTE:
-                parent = ParentNode("blockquote", text_to_children(block))
+                parent = ParentNode("blockquote", bquote_text_to_children(block))
                 children.append(parent)
             case BlockType.OLIST:
                 nodes = olist_text_to_children(block)

@@ -172,21 +172,21 @@ this is paragraph text
             "<div><h1>this is an h1</h1><p>this is paragraph text</p><h2>this is an h2</h2></div>",
         )
 
-#     def test_blockquote(self):
-#         md = """
-# > This is a
-# > blockquote block
+    def test_blockquote(self):
+        md = """
+> This is a
+> blockquote block
 
-# this is paragraph text
+this is paragraph text
 
-# """
+"""
 
-#         node = markdown_to_html_node(md)
-#         html = node.to_html()
-#         self.assertEqual(
-#             html,
-#             "<div><blockquote>This is a blockquote block</blockquote><p>this is paragraph text</p></div>",
-#         )
+        node = markdown_to_html_node(md)
+        html = node.to_html()
+        self.assertEqual(
+            html,
+            "<div><blockquote>This is a blockquote block</blockquote><p>this is paragraph text</p></div>",
+        )
 
     def test_code(self):
         md = """
