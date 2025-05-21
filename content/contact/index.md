@@ -2,8 +2,4 @@
 
 [< Back Home](/)
 
-Give me a call anytime to chat about Tolkien!
-
-`555-555-5555`
-
-**"Váya márië."**
+Call me at (123)-456-7890!

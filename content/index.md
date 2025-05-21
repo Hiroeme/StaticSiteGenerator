@@ -1,46 +1,39 @@
-# Tolkien Fan Club
+# Testing Site Markdown -> HTML
 
-![JRR Tolkien sitting](/images/tolkien.png)
+![Summer Girl Scene](/images/summer.jpg)
 
-Here's the deal, **I like Tolkien**.
+**I love programming!**
 
-> "I am in fact a Hobbit in all but size."
+> "I love eating."
 >
-> -- J.R.R. Tolkien
+> -- Abraham Lincoln
 
-## Blog posts
+## Posts
 
-- [Why Glorfindel is More Impressive than Legolas](/blog/glorfindel)
-- [Why Tom Bombadil Was a Mistake](/blog/tom)
-- [The Unparalleled Majesty of "The Lord of the Rings"](/blog/majesty)
+- [Testing 1](/post/test1)
+- [Testing 2](/post/test2)
+- [Testing 3](/post/test3)
 
-## Reasons I like Tolkien
+## Reasons I like Programming
 
-- You can spend years studying the legendarium and still not understand its depths
-- It can be enjoyed by children and adults alike
-- Disney _didn't ruin it_ (okay, but Amazon might have)
-- It created an entirely new genre of fantasy
+- Programming is cool!
+- Testing makes the world go round.
+- I love cool stuff.
 
-## My favorite characters (in order)
+## My favorite coding languages:
 
-1. Gandalf
-2. Bilbo
-3. Sam
-4. Glorfindel
-5. Galadriel
-6. Elrond
-7. Thorin
-8. Sauron
-9. Aragorn
+1. Python
+2. JavaScript
+3. TypeScript
 
-Here's what `elflang` looks like (the perfect coding language):
+
+Example of Python language:
 
 ```
-func main(){
-    fmt.Println("Aiya, Ambar!")
-}
+def test():
+    print("Hello world!")
 ```
 
-Want to get in touch? [Contact me here](/contact).
+[Contact me!](/contact/)
 
-This site was generated with a custom-built [static site generator](https://www.boot.dev/courses/build-static-site-generator-python) from the course on [Boot.dev](https://www.boot.dev).
+This site was generated with a custom-built static site generator based on the course on [Boot.dev](https://www.boot.dev).
